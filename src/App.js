@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Pokemons from './components/Pokemons';
 import Header from './components/layout/Header';
@@ -7,22 +7,30 @@ import Types from './components/pages/Types';
 import axios from 'axios';
 import PokemonDetail from './components/PokemonDetail';
 
-class App extends Component {
-  state = {
-    pokemons: []
-  }
+const App = props => {
+  const [state, setState] = useState({ pokemons: [] });
 
-  componentDidMount() {
+
+
+  useEffect(() => {
     axios.get('https://pokeapi.co/api/v2/pokemon')
-    .then(res => this.setState({pokemons: res.data.results}))
-  }
+    .then(res => setState({pokemons: res.data.results}))
 
-  detailPokemon = (url) => {
-    // TODO i need help:(
+    // console.log(console.log(state))
+  }, []);
+
+  // componentDidMount() {
+  //   axios.get('https://pokeapi.co/api/v2/pokemon')
+  //   .then(res => setState({pokemons: res.data.results}))
+  // }
+
+  const detailPokemon = (url) => {
+    // It doesn't do anything however it is needed 
+    // because i binding in PokemonItem just for science :D
     console.log(url)
   }
 
-  render() {
+
     return (
       <Router>
       <div className="App">
@@ -31,7 +39,9 @@ class App extends Component {
         <div className="container">
         <Route exact path="/Pokemons" render={props => (
           <React.Fragment>
-            <Pokemons pokemons={this.state.pokemons}  detailPokemon={this.detailPokemon}/>
+            <Pokemons pokemons={state.pokemons}  
+            detailPokemon={detailPokemon}
+            />
           </React.Fragment>
         )} />
         <Route path="/types" component={Types} />
@@ -41,7 +51,6 @@ class App extends Component {
       </div>
       </Router>
     );
-  }
 }
 
 export default App;
