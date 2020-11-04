@@ -1,10 +1,11 @@
 import './App.css';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-import Pokemons from './components/Pokemons'
-import Header from './components/layout/Header'
+import Pokemons from './components/Pokemons';
+import Header from './components/layout/Header';
 import Types from './components/pages/Types';
 import axios from 'axios';
+import PokemonDetail from './components/PokemonDetail';
 
 class App extends Component {
   state = {
@@ -34,9 +35,9 @@ class App extends Component {
           </React.Fragment>
         )} />
         <Route path="/types" component={Types} />
-        {/* <Route path={this.detailPokemon} /> */}
         </div>
         </div>
+        <Route path="/Pokemon" component={PokemonDetail} />
       </div>
       </Router>
     );
