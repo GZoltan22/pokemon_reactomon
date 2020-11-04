@@ -17,6 +17,7 @@ class App extends Component {
   }
 
   detailPokemon = (url) => {
+    // TODO i need help:(
     console.log(url)
   }
 
