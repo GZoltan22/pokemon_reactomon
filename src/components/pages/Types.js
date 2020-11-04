@@ -1,22 +1,28 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import PokemonTypes from "./PokemonTypes"
 import axios from 'axios';
 
-export default class Types extends Component {
-    state = {
-        pokemonTypes: []
-      }
-      componentDidMount() {
+const Types = props => {
+    const [state, setState] = useState({ pokemonTypes: [] })
+
+
+    useEffect(() => {
         axios.get('https://pokeapi.co/api/v2/type')
-        .then(res => this.setState({pokemonTypes: res.data.results}))
-      }
+        .then(res => setState({pokemonTypes: res.data.results}))
+
+    })
+
+    //   componentDidMount() {
+    //     axios.get('https://pokeapi.co/api/v2/type')
+    //     .then(res => this.setState({pokemonTypes: res.data.results}))
+    //   }
     
-    render() {
         return (
             <div className="container">
-                <PokemonTypes pokemonTypes = {this.state.pokemonTypes} />
+                <PokemonTypes pokemonTypes = {state.pokemonTypes} />
             </div>
         )
-    }
 }
+
+export default Types;
 

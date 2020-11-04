@@ -3,18 +3,18 @@ import PokemonItem from './PokemonItem';
 
 import PropTypes from 'prop-types';
 
-export default class Pokemons extends Component {
-    render() {
+const Pokemons = props => {
         return (
-            this.props.pokemons.map((pokemon) => (
+            props.pokemons.map((pokemon) => (
             <PokemonItem pokemon={pokemon}
-            detailPokemon = {this.props.detailPokemon} />
+            detailPokemon = {props.detailPokemon} />
             ))
         )
-    }
 }
 
 // PropTypes
 Pokemons.propTypes = {
     pokemons: PropTypes.array.isRequired
 }
+
+export default Pokemons;
