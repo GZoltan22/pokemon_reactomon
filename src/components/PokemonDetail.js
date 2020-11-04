@@ -27,7 +27,7 @@ const PokemonDetail = props => {
 
         
         return (
-            <PokemonAbilities abilities={this.state.abilities}/>
+            <PokemonAbilities abilities={state.abilities}/>
         )
 }
 
