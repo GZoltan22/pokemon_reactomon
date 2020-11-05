@@ -16,13 +16,9 @@ const App = props => {
     axios.get('https://pokeapi.co/api/v2/pokemon')
     .then(res => setState({pokemons: res.data.results}))
 
-    // console.log(console.log(state))
   }, []);
 
-  // componentDidMount() {
-  //   axios.get('https://pokeapi.co/api/v2/pokemon')
-  //   .then(res => setState({pokemons: res.data.results}))
-  // }
+
 
   const detailPokemon = (url) => {
     // It doesn't do anything however it is needed 

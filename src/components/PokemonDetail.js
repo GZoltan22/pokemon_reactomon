@@ -15,17 +15,7 @@ const PokemonDetail = props => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(res => {setState({abilities: res.data.abilities})
         })
-    })
-
-    //   componentDidMount() {
-    //     const url = window.location.pathname;
-    //     const id = url.substring(url.lastIndexOf('/') + 1);
-        
-    //     axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    //     .then(res => {
-    //         this.setState({abilities: res.data.abilities})
-    //     })
-    //   }
+    }, [])
 
         
         return (

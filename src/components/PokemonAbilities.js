@@ -1,4 +1,4 @@
-// import React, { Component } from 'react'
+
 
 const PokemonAbilities = props => {
         return (props.abilities.map(ability => (

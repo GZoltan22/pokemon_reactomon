@@ -12,11 +12,6 @@ const Types = props => {
 
     })
 
-    //   componentDidMount() {
-    //     axios.get('https://pokeapi.co/api/v2/type')
-    //     .then(res => this.setState({pokemonTypes: res.data.results}))
-    //   }
-    
         return (
             <div className="container">
                 <PokemonTypes pokemonTypes = {state.pokemonTypes} />

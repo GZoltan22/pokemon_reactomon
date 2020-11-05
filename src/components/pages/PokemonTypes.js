@@ -1,4 +1,4 @@
-// import React, { Component } from 'react'
+
 import PokemonTypeItem from './PokemonTypeItem';
 
 const PokemonTypes = props => {
