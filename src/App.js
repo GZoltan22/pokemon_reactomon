@@ -6,9 +6,49 @@ import Header from './components/layout/Header';
 import Types from './components/pages/Types';
 import axios from 'axios';
 import PokemonDetail from './components/PokemonDetail';
+import styled, { ThemeProvider, css } from 'styled-components';
+
+
+
+const Div = styled.div`
+
+font-family: sans-serif;
+/* background-image: url('https://www.designbolts.com/wp-content/uploads/2012/12/Skeletal-Weave-White-Tileable-pattern-for-website-background.jpg'); */
+display: flex;
+align-items: center;
+justify-content: center;
+`;
+
+
+const backgroundStyle = {
+  
+  // backgroundImage: "url('https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F04%2Fpokemon-pikachu-video-chat-backgrounds-download-info-006.jpg?quality=95&w=1170&cbr=1&q=90&fit=max')",
+  // backgroundImage: "url('https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png')",
+  // opacity: "0.5",
+
+  color: "#fff",
+}
+
+
 
 const App = props => {
   const [state, setState] = useState({ pokemons: [] });
+  const [ids, setIds] = useState({ ids: []})
+  // const [pokemonPics, setPokemonPics] = useState([]);
+
+  // useEffect(() => {
+  //   console.log("it starts")
+  //   // for (let id = 1; id <= 10; id++) {
+  //   //   axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+  //   //   .then(res => setPokemonPics({pokemonPics: [...pokemonPics, ...res.data.sprites.other.["official-artwork"].front_default]}))
+  //   // };
+  //   axios.get(`https://pokeapi.co/api/v2/pokemon/1/`)
+  //   .then(res => setPokemonPics({pokemonPics: res.data.sprites.other.["official-artwork"].front_default}))
+
+  //   console.log(pokemonPics)
+  //   console.log(state.size)
+  // }, [])
+
 
 
 
@@ -26,24 +66,23 @@ const App = props => {
     console.log(url)
   }
 
-
     return (
       <Router>
-      <div className="App">
+      <div style = {backgroundStyle} className="App">
         <Header />
         <div className="row">
-        <div className="container">
+        <Div className="container">
         <Route exact path="/Pokemons" render={props => (
-          <React.Fragment>
-            <Pokemons pokemons={state.pokemons}  
-            detailPokemon={detailPokemon}
-            />
-          </React.Fragment>
+          <Pokemons pokemons={state.pokemons}  
+          detailPokemon={detailPokemon}/>
         )} />
+
         <Route path="/types" component={Types} />
-        </div>
-        </div>
         <Route path="/Pokemon" component={PokemonDetail} />
+        </Div>
+        </div>
+        
+
       </div>
       </Router>
     );
