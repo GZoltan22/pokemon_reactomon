@@ -24,7 +24,6 @@ const Div = styled.div`
     color: yellow;
     text-align: left;
     padding: 216px;
-
 `;
 
 
