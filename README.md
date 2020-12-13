@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It was a CodeCool project. The main goal was to get familiar with react, it shows pokemons and if you click on them it shows their types. 
 
 ## Available Scripts
 
