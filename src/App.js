@@ -34,22 +34,6 @@ const backgroundStyle = {
 const App = props => {
   const [state, setState] = useState({ pokemons: [] });
   const [ids, setIds] = useState({ ids: []})
-  // const [pokemonPics, setPokemonPics] = useState([]);
-
-  // useEffect(() => {
-  //   console.log("it starts")
-  //   // for (let id = 1; id <= 10; id++) {
-  //   //   axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-  //   //   .then(res => setPokemonPics({pokemonPics: [...pokemonPics, ...res.data.sprites.other.["official-artwork"].front_default]}))
-  //   // };
-  //   axios.get(`https://pokeapi.co/api/v2/pokemon/1/`)
-  //   .then(res => setPokemonPics({pokemonPics: res.data.sprites.other.["official-artwork"].front_default}))
-
-  //   console.log(pokemonPics)
-  //   console.log(state.size)
-  // }, [])
-
-
 
 
   useEffect(() => {
@@ -62,7 +46,7 @@ const App = props => {
 
   const detailPokemon = (url) => {
     // It doesn't do anything however it is needed 
-    // because i binding in PokemonItem just for science :D
+    // because I binding in PokemonItem just for science :D
     console.log(url)
   }
 

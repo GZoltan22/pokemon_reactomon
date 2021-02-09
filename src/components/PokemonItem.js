@@ -39,7 +39,6 @@ const PokemonItem = props => {
         .then((response) => {
             setPokemonPic(response.data.sprites.other["official-artwork"].front_default);
         })
-        // .then(res => setPokemonPic({pokemonPic: res.data.sprites.other.["official-artwork"].front_default}))
         console.log(pokemonPic)
         console.log("asd")
       },[pokemonPic])
