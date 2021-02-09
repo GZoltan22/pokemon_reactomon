@@ -22,6 +22,7 @@ const PokemonItem = props => {
     const {url, name } = props.pokemon;
     const id = url.substring(url.lastIndexOf('/') - 1, url.lastIndexOf('/'));
     // const regId = "/[0-9]+/(|$)";
+    // TODO many versions to get the pokemondID and the used one is totally unreadable. (pokID[6] how should u know that what is this?)
     const last = url.split('&').pop().split('=');
     const pokemonId = last[0];
     const pokId = url.split("/")
